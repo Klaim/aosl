@@ -712,7 +712,7 @@
 
         </xs:all>
 
-        <xs:attribute name="begin" type="aos:stage_ref" use="required" >
+        <xs:attribute name="begin" type="aos:node_ref" use="required" >
             <xs:annotation>
                 <xs:documentation>The Node to begin the Sequence with.</xs:documentation>
             </xs:annotation>
@@ -1283,7 +1283,7 @@
 
         </xs:all>
 
-        <xs:attribute name="id" type="aos:stage_id" use="required" >
+        <xs:attribute name="id" type="aos:node_id" use="required" >
             <xs:annotation>
                 <xs:documentation>Id of the node.</xs:documentation>
             </xs:annotation>
@@ -1319,7 +1319,7 @@
 
         </xs:sequence>
 
-        <xs:attribute name="from" type="aos:stage_ref_list" use="required" >
+        <xs:attribute name="from" type="aos:node_ref_list" use="required" >
             <xs:annotation>
                 <xs:documentation>
                     Id of the Node to transition from.
@@ -1330,7 +1330,7 @@
             </xs:annotation>
         </xs:attribute>
 
-        <xs:attribute name="to" type="aos:unique_stage_ref" use="required" >
+        <xs:attribute name="to" type="aos:unique_node_ref" use="required" >
             <xs:annotation>
                 <xs:documentation>
                     Id of the Node to transition to. 
@@ -1340,7 +1340,7 @@
             </xs:annotation>
         </xs:attribute>
 
-        <xs:attribute name="id" type="aos:move_id" use="required" >
+        <xs:attribute name="id" type="aos:transition_id" use="required" >
             <xs:annotation>
                 <xs:documentation>Id of this Transition.</xs:documentation>
             </xs:annotation>
@@ -1557,7 +1557,7 @@
             <xs:documentation>An Event specify a response to inputs from the user or the player/intepreter.</xs:documentation>
         </xs:annotation>
 
-        <xs:attribute name="transition" type="aos:move_ref" use="required" >
+        <xs:attribute name="transition" type="aos:transition_ref" use="required" >
             <xs:annotation>
                 <xs:documentation>
                     Id of the transition to go to if this Event is triggered,
@@ -1711,7 +1711,7 @@
 
     </xs:simpleType>
 
-    <xs:simpleType name="stage_id">
+    <xs:simpleType name="node_id">
         <xs:annotation>
             <xs:documentation>Node Id type.</xs:documentation>
         </xs:annotation>
@@ -1720,7 +1720,7 @@
 
     </xs:simpleType>
 
-    <xs:simpleType name="move_id">
+    <xs:simpleType name="transition_id">
         <xs:annotation>
             <xs:documentation>Transition Id type.</xs:documentation>
         </xs:annotation>
@@ -1772,7 +1772,7 @@
 
     <!--# Nodes ##-->
 
-    <xs:simpleType name="unique_stage_ref">
+    <xs:simpleType name="unique_node_ref">
         <xs:annotation>
             <xs:documentation>Reference to a Node.</xs:documentation>
         </xs:annotation>
@@ -1780,25 +1780,25 @@
         <xs:restriction base="aos:unique_ref" />
     </xs:simpleType>
     
-    <xs:simpleType name="stage_ref">
+    <xs:simpleType name="node_ref">
         <xs:annotation>
             <xs:documentation>Reference to a Node or to a special node search.</xs:documentation>
         </xs:annotation>
 
-        <xs:union memberTypes="aos:unique_stage_ref aos:special_stage_ref" />
+        <xs:union memberTypes="aos:unique_node_ref aos:special_node_ref" />
 
     </xs:simpleType>
 
-    <xs:simpleType name="stage_ref_list">
+    <xs:simpleType name="node_ref_list">
         <xs:annotation>
             <xs:documentation>List of references to a Nodes.</xs:documentation>
         </xs:annotation>
 
-        <xs:list itemType="aos:stage_ref" />
+        <xs:list itemType="aos:node_ref" />
 
     </xs:simpleType>
 
-    <xs:simpleType name="special_stage_ref">
+    <xs:simpleType name="special_node_ref">
         <xs:annotation>
             <xs:documentation>Reference to one or more nodes automatically found by using a search logic. </xs:documentation>
         </xs:annotation>
@@ -1829,7 +1829,7 @@
 
     <!--# Transitions ##-->
 
-    <xs:simpleType name="unique_move_ref">
+    <xs:simpleType name="unique_transition_ref">
         <xs:annotation>
             <xs:documentation>Reference to a Transition.</xs:documentation>
         </xs:annotation>
@@ -1838,7 +1838,7 @@
 
     </xs:simpleType>
 
-    <xs:simpleType name="special_move_ref">
+    <xs:simpleType name="special_transition_ref">
         <xs:annotation>
             <xs:documentation> Get automatically a transition reference by using a search logic. </xs:documentation>
         </xs:annotation>
@@ -1867,12 +1867,12 @@
 
     </xs:simpleType>
 
-    <xs:simpleType name="move_ref">
+    <xs:simpleType name="transition_ref">
         <xs:annotation>
-            <xs:documentation>Reference to a transition or automatically find a transition reference. (see special_move_ref)</xs:documentation>
+            <xs:documentation>Reference to a transition or automatically find a transition reference. (see special_transition_ref)</xs:documentation>
         </xs:annotation>
 
-        <xs:union memberTypes="aos:unique_move_ref aos:special_move_ref" />
+        <xs:union memberTypes="aos:unique_transition_ref aos:special_transition_ref" />
 
     </xs:simpleType>
 
