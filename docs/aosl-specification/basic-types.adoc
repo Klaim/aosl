@@ -57,6 +57,32 @@ Possible XSD representation:
 ====
 
 
+=== aos:unit_stream ===
+
+. +aos:unit_stream+ is a type representing a time-point in a stream.
+. +aos:unit_stream+ must be either a +aos:unit_time+ or an +aos:value_percent+.
+. +aos:unit_stream+ value must be interpreted following these rules:
+    - if the value is a unit_time then it shall be interpreted as the exact time-point in the stream.
+    - if the value is a value_percent then it shall be interpreted as a percentage of time 
+        compared to the complete stream duration.
+        If the stream is not bounded, using +aos:value_percent+ is ill-formed.
+
+
+[NOTE]
+====
+Possible XSD representation:
+[source,xml]
+----
+<xs:simpleType aos:name="unit_stream" >
+    <xs:union memberTypes="aos:unit_time aos:value_percent" />
+</xs:simpleType>
+----
+====
+
+
+
+
+
 === aos:angle ===
 
 . +aos:angle+ is a type representing a geometric angle.
