@@ -1,6 +1,13 @@
 
 == Definitions
 
+=== ill-formed ===
+
+If the specification says that the AOSL data is "ill-formed",
+it means that the AOSL data cannot be interpreted correctly
+by the interpreter. 
+The interpreter should report ill-formed AOSL data.
+
 === type ===
 
 Specifiy the constraints and usage of data.
@@ -76,11 +83,19 @@ Possible XSD representation of type which matches the valid-identifier definitio
 </xs:simpleType>
 ----    
 ====
-    
+
+=== stream ===
+
+In the context of this document, a stream is a time-bound flow of data.
+We consider video and audio content as stream as they are time-bound
+compared to a static image or a text.
+
+A stream can be bounded, in which case it does have an end, or unbounded.
+Therefore, only bounded stream can ever be complete.
 
 === interpreter ===
 
-The interpreter is the implementation that will read the AOSL data and apply it's semantic.
+The interpreter is the implementation that knows how to read the AOSL data and apply it's semantic.
 
 [NOTE]
 ====
