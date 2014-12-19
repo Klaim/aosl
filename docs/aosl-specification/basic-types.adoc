@@ -6,7 +6,7 @@
 === aos:unit_space ===
 
 . +aos:unit_space+ is a type containing values in spatial units.
-. +aos:unit_space+ must be implemented as a  decimal-type.
+. +aos:unit_space+ must be implemented as a decimal-type.
 . +aos:unit_space+ value must be interpreted as a distance from a relative value on an axis defined in a vectorial space.
 
 [NOTE]
@@ -170,11 +170,11 @@ Possible XSD representation:
 . +aos:transformation+ is composed of the following elements which can appear in any order:
 +
 |===
-| *Element Name*  | *Type*                   | *Occurence*      | *Semantic*    
-| +translation+       | +aos:vector+         | Once or none.     | Represents a translation applied to the subject of the +aos:transformation+. 
-| +scale+              | +aos:vector+          | Once or none.     | Represents an homotetie applied to the subject of the +aos:transformation+. 
-| +aos:rotation+    | +aos:vector+          | Once or none.     | Represents a aos:rotation applied to the subject of the +aos:transformation+, relative to the +origin+ point. 
-| +origin+              | +aos:vector+         | Once or none.     | Represents an homotetie applied to the subject of the +aos:transformation+. 
+| *Element Name*  | *Type*               | *Occurence*       | *Semantic*    
+| +translation+   | +aos:vector+         | Once or none.     | Represents a translation applied to the subject of the +aos:transformation+. 
+| +scale+         | +aos:vector+         | Once or none.     | Represents an homotetie applied to the subject of the +aos:transformation+. 
+| +aos:rotation+  | +aos:vector+         | Once or none.     | Represents a aos:rotation applied to the subject of the +aos:transformation+, relative to the +origin+ point. 
+| +origin+        | +aos:vector+         | Once or none.     | Represents an homotetie applied to the subject of the +aos:transformation+. 
 |===
 
 [NOTE]
@@ -204,12 +204,12 @@ Possible XSD representation:
 +
 |===
 | *Element Name*              | *Type*                              | *Occurence*      | *Semantic*     
-| +size+                            | +aos:vector+                     | Once or none.    |
+| +size+                      | +aos:vector+                        | Once or none.    |
     Size of the aos:box.
     Each one of the axes value gives the length of the corresponding edges of the aos:box.
     If not provided, the default size should be determined by the implementation.
     In this case, if it is the ouput or input aos:box of a graphic object, the default value is 100% of the resource size.  
-| +aos:transformation+       | +aos:transformation+        | Once or none.  |
+| +aos:transformation+        | +aos:transformation+                | Once or none.  |
     Transformation defining the position, 
     orientation and scale factor of this aos:box, 
     relative to the parent object or the canvas origin if no parent.  
@@ -394,10 +394,10 @@ Possible XSD representation:
 . +aos:rotation+ must expose the following attributes:
 +
 |===
-| *Attribute Name* | *Type* | *Default value* | *Semantic* 
-| +yaw+   | +aos:angle+ | 0.0 | Represents a aos:rotation around the X axis in a 3D vectorial space. 
-| +pitch+  | +aos:angle+ | 0.0 | Represents a aos:rotation around the Y axis in a 3D vectorial space. 
-| +roll+    | +aos:angle+ | 0.0 | Represents a aos:rotation around the Z axis in a 3D vectorial space. 
+| *Attribute Name* | *Type*      | *Default value* | *Semantic* 
+| +yaw+            | +aos:angle+ | 0.0 | Represents a aos:rotation around the X axis in a 3D vectorial space. 
+| +pitch+          | +aos:angle+ | 0.0 | Represents a aos:rotation around the Y axis in a 3D vectorial space. 
+| +roll+           | +aos:angle+ | 0.0 | Represents a aos:rotation around the Z axis in a 3D vectorial space. 
 |===
 
 
